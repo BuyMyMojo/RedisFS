@@ -1,6 +1,6 @@
 [package]
 name = "redisfs"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "A small CLI tool to use Redis as a file server"
 readme = "README.md"

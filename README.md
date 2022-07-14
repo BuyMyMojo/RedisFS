@@ -10,6 +10,7 @@
 	<img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square"/>
 	<img src="https://img.shields.io/github/license/BuyMyMojo/RedisFS?color=green"/>
 	<img src="https://img.shields.io/github/last-commit/BuyMyMojo/RedisFS?color=green"/>
+	<img alt="Crates.io" src="https://img.shields.io/crates/v/redisfs">
 </p>
 
 <h4 align="center">
@@ -29,7 +30,20 @@ RedisFS allows you to easily store and download files inside of a Redis instance
 ## Tech Stack
 <img src="https://img.shields.io/badge/Git-05122A?style=flat&logo=git" alt="git Badge" height="25">
 <img src="https://img.shields.io/badge/Rust-05122A?style=flat&logo=rust" alt="Rust Badge" height="25">
-<img src="https://img.shields.io/badge/Redis-05122A?style=flat&logo=redis" alt="Redis Badge" height="25">&nbsp;
+<img src="https://img.shields.io/badge/Redis-05122A?style=flat&logo=redis" alt="Redis Badge" height="25">
+&nbsp;
+
+## Installation
+To use this project, follow the steps above:
+```bash
+# Using crates.io
+cargo install redisfs
+
+# Build using cargo
+git clone https://github.com/BuyMyMojo/RedisFS.git
+cd RedisFS
+cargo build --release
+```
 
 ## Usage
 To use this project, follow the steps above:
@@ -62,6 +76,7 @@ redisfs -r "redis://[username]:[password]@[address]:[password]" list
 
 Made with ❤️ by [Owen Quinlan](https://github.com/BuyMyMojo), get in touch!
 
-<a href="mailto:hello@buymymojo.net" target="_blank"><img src="https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white" alt="Email Badge" height="25"></a>&nbsp;
+<a href="mailto:hello@buymymojo.net" target="_blank"><img src="https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white" alt="Email Badge" height="25"></a>
+<img src="https://img.shields.io/badge/Discord:BuyMyMojo%230308-5865F2?style=flat&logo=discord&logoColor=white" alt="Discord Badge" height="25">&nbsp;
 
 <br clear="left"/>

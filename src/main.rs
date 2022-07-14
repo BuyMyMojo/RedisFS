@@ -56,6 +56,10 @@ enum SubCommands  {
        #[clap(value_parser)]
        file_key: String,
    },
+   /// List all files in the DB and their memory usage
+   #[clap(arg_required_else_help = false)]
+   List {
+   },
 }
 
 fn main() {
@@ -75,6 +79,9 @@ fn main() {
         }
         SubCommands::Usage { file_key } => {
             file_memory_usage(addr, file_key);
+        }
+        SubCommands::List {} => {
+            list_files(addr);
         }
     }
 }
@@ -168,3 +175,26 @@ fn file_memory_usage(redis_address: String, file_key: String) {
 
     println!("RedisFS:{} uses {}", file_key, convert(usage));
 }
+
+/// Get memory usage of specified key
+fn list_files(redis_address: String) {
+    // Connect to Redis
+    let client = redis::Client::open(redis_address)
+        .expect("Failed to create Redis client");
+    let mut con = client.get_connection()
+        .expect("Failed to connect to Redis");
+
+    let mut keys: Vec<String> = con.keys("RedisFS:*").unwrap();
+
+    keys.sort();
+
+
+    for key in keys {
+        let usage: f64 = redis::cmd("MEMORY").arg("USAGE").arg(&key).query(&mut con)
+        .expect("Unable to get memory usage");
+        println!("{} uses {}", key, convert(usage));
+    }
+
+    
+
+    }
